@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavna-Portfolio</title>
+    <link href="portfolio.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color:black;color:#71c2eb;font-style:'Poppins','sans serif';">
+    <nav>
+        <div class="left"><img
+                src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-portfolio-icon-png-image_4165527.jpg"
+                alt="img" height="78" id="i1">Port<span class="yellow">folio</span></div>
+        <div class="right">
+            <ul id="u1">
+                <li><a href="./Portfolio.html">Home</a></li>
+                <li><a href="./portintro.html">About me</a></li>
+                <li><a href="./portresume.html">Resume</a></li>
+                <li><a href="./portskills.html">Skills</a></li>
+                <li><a href="./portcontact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header></header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsec">Hello, I'm
+                <div><span class="purple">Bhavna More</span></div>
+            </div>
+            <div class="rightsec"><img
+                    src="https://images.unsplash.com/photo-1525342631975-cfc922fe0b05?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8"
+                    alt="i2" id="i2" style="margin-left:0px;margin-bottom:10px;height:650px;width:720px;"></div>
+        </section>
+    </main>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz4q_d1oUfrgwWCKCSxCum_xG9jwWR_wCEPw62S2xkvEnWacMW39yhP_nEeRsAXXPOLAw/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>

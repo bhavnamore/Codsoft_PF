@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavna-Portfolio</title>
+    <link href="portfolio.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body style="background-color:black;color:#71c2eb;font-style:'Poppins','sans serif';">
+    <nav>
+        <div class="left"><img
+                src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-vector-portfolio-icon-png-image_4165527.jpg"
+                alt="img" height="78" id="i1">Port<span class="yellow">folio</span></div>
+        <div class="right">
+            <ul id="u1">
+                <li><a href="./Portfolio.html">Home</a></li>
+                <li><a href="./portintro.html">About me</a></li>
+                <li><a href="./portresume.html">Resume</a></li>
+                <li><a href="./portskills.html">Skills</a></li>
+                <li><a href="./portcontact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="contactme">
+        <div class="container">
+            <div class="row">
+                <h1 class="sub-title"><u>Contact Me</u> <img
+                        src="https://www.seekpng.com/png/full/26-260854_contact-us-phone-icon-contact-us-icon-black.png"
+                        alt="c1" height="45" /></h1>
+                <div class="cont-left">
+                    <p><i class="fa-solid fa-envelope" id="f1"></i> bhavna.16953@sakec.ac.in</p>
+                    <div class="social-icons">
+                        <pre>   <a href="https://www.linkedin.com/in/bhavna-sanjay-more-b3435525b/"><i
+                                class="fa-brands fa-linkedin"></i></a>     <a href="https://github.com/bhavnamore"><i
+                                    class="fa-brands fa-github"></i></a></pre>
+                    </div>
+                </div>
+                <div class="cont-right">
+                    <form name="submit-to-google-sheet" id="fr1">
+                        <input type="text" name="name" placeholder="Enter your name" id="t1"><br><br>
+                        <input type="email" name="email" placeholder="Enter email" id="e1"><br><br>
+                        <textarea name="Message" placeholder="Message" rows="3" id="m1"></textarea>
+                        <button type="submit" class="btn2"
+                            style="padding:10px 40px;font-size:20px;margin-top:20px;cursor:pointer;border-radius:25px;">Submit</button>
+                    </form>
+                    <span id="sn1"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz4q_d1oUfrgwWCKCSxCum_xG9jwWR_wCEPw62S2xkvEnWacMW39yhP_nEeRsAXXPOLAw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const sn1 = document.getElementById("sn1")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    sn1.innerHTML = "Sent successfully!!"
+                    setTimeout(function () {
+                        sn1.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
